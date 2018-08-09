@@ -1,6 +1,7 @@
 package com.trendyol.usereventregistration.controller;
 
 
+import com.trendyol.usereventregistration.model.EventsGetResponse;
 import com.trendyol.usereventregistration.service.EventServiceClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,7 @@ public class EventController {
 
 
     @GetMapping
-    public Object getEvents() {
+    public EventsGetResponse getEvents() {
         return eventServiceClient.getEvents();
     }
 }

@@ -13,15 +13,12 @@ import java.util.List;
  */
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UpcomingEventSchedule implements Serializable {
-    private CityDTO city;
-    private List<EventDTO> events;
+public class UpcomingEvents implements Serializable {
+    private List<Event> events;
 
     @JsonCreator
-    public UpcomingEventSchedule(
-            @JsonProperty("city") CityDTO city,
-            @JsonProperty("events") List<EventDTO> events) {
-        this.city = city;
+    public UpcomingEvents(
+            @JsonProperty("events") List<Event> events) {
         this.events = events;
     }
 }

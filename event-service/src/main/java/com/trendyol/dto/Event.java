@@ -15,7 +15,7 @@ import java.io.Serializable;
  */
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class EventDTO implements Serializable {
+public class Event implements Serializable {
     private Long created;
     private Long duration;
     private String id;
@@ -37,26 +37,26 @@ public class EventDTO implements Serializable {
     private Visibility visibility;
 
     @JsonCreator
-    public EventDTO(@JsonProperty("created") Long created,
-                    @JsonProperty("duration") Long duration,
-                    @JsonProperty("id") String id,
-                    @JsonProperty("name") String name,
-                    @JsonProperty("rsvp_limit") int reservationLimit,
-                    @JsonProperty("status")
+    public Event(@JsonProperty("created") Long created,
+                 @JsonProperty("duration") Long duration,
+                 @JsonProperty("id") String id,
+                 @JsonProperty("name") String name,
+                 @JsonProperty("rsvp_limit") int reservationLimit,
+                 @JsonProperty("status")
                     @JsonDeserialize(using = StatusDeserializer.class) Status status,
-                    @JsonProperty("time") Long time,
-                    @JsonProperty("local_date") String localDate,
-                    @JsonProperty("local_time") String localTime,
-                    @JsonProperty("updated") Long updated,
-                    @JsonProperty("utc_offset") Long utcOffset,
-                    @JsonProperty("waitlist_count") int waitlistCount,
-                    @JsonProperty("yes_rsvp_count") int yesReservationCount,
-                    @JsonProperty("venue") VenueDTO venue,
-                    @JsonProperty("group") GroupDTO group,
-                    @JsonProperty("link") String link,
-                    @JsonProperty("description") String description,
-                    @JsonProperty("how_to_find_us") String howToFindUs,
-                    @JsonProperty("visibility")
+                 @JsonProperty("time") Long time,
+                 @JsonProperty("local_date") String localDate,
+                 @JsonProperty("local_time") String localTime,
+                 @JsonProperty("updated") Long updated,
+                 @JsonProperty("utc_offset") Long utcOffset,
+                 @JsonProperty("waitlist_count") int waitlistCount,
+                 @JsonProperty("yes_rsvp_count") int yesReservationCount,
+                 @JsonProperty("venue") VenueDTO venue,
+                 @JsonProperty("group") GroupDTO group,
+                 @JsonProperty("link") String link,
+                 @JsonProperty("description") String description,
+                 @JsonProperty("how_to_find_us") String howToFindUs,
+                 @JsonProperty("visibility")
                     @JsonDeserialize(using = VisibilityDeserializer.class) Visibility visibility) {
         this.created = created;
         this.duration = duration;
